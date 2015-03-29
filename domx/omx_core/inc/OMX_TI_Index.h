@@ -204,86 +204,16 @@ typedef enum OMX_TI_INDEXTYPE {
     OMX_TI_IndexConfigAVCHRDBufferSizeSetting,          /**< 0x7F00006F reference: OMX_TI_VIDEO_CONFIG_AVCHRDBUFFERSETTING */
     OMX_TI_IndexConfigFocusDistance,                    /**< 0x7F000070 reference: OMX_TI_CONFIG_FOCUSDISTANCETYPE */
     OMX_TI_IndexUseNativeBuffers,                       /**< 0x7F000071 reference: OMX_TI_ParamUseNativeBuffer(used only in proxy) */
-    OMX_TI_IndexConfigSinglePreviewMode,                /**< 0x7F000072 reference:  */
-    OMX_TI_IndexConfigFreezeAWB,                        /**< 0x7F000073 reference:  */
-    OMX_TI_IndexConfigAWBMinDelayTime,                  /**< 0x7F000074 reference:  */
-    OMX_TI_IndexConfigDetectedGesturesInfo,             /**< 0x7F000075 reference:  */
-    OMX_TI_IndexConfigAutoExpMinDelayTime,              /**< 0x7F000076 reference:  */
-    OMX_TI_IndexConfigFreezeAutoExp,                    /**< 0x7F000077 reference:  */
-    OMX_TI_IndexConfigAutoExpThreshold,                 /**< 0x7F000078 reference:  */
-    OMX_TI_IndexParamZslHistoryLen,                     /**< 0x7F000079 reference: OMX_TI_PARAM_ZSLHISTORYLENTYPE */
-    OMX_TI_IndexConfigZslDelay,                         /**< 0x7F00007A reference: OMX_TI_CONFIG_ZSLDELAYTYPE */
-    OMX_TI_IndexConfigMechanicalMisalignment,           /**< 0x7F00007B reference: OMX_TI_CONFIG_MM */
-    OMX_TI_IndexParamAffineTransform,                   /**< 0x7F00007C reference: OMX_TI_CONFIG_AFFINE */
-    OMX_TI_IndexParamUseEnhancedPortReconfig,           /**< 0x7F00007D reference: OMX_TI_IndexParamUseEnhancedPortReconfig */
-    OMX_TI_IndexEncoderStoreMetadatInBuffers,           /**< 0x7F00007E reference:  */
-    OMX_TI_IndexParamMetaDataBufferInfo,                /**< 0x7F00007F reference: OMX_TI_PARAM_METADATABUFFERINFO */
-    OMX_TI_IndexConfigZslFrameSelectMethod,             /**< 0x7F000080 reference: OMX_TI_CONFIG_ZSLFRAMESELECTMETHODTYPE */
-    OMX_TI_IndexAndroidNativeBufferUsage,               /**< 0x7F000081 reference: OMX_TI_IndexAndroidNativeBufferUsage */
-    OMX_TI_IndexConfigAlgoAreas,                        /**< 0x7F000082 reference: OMX_PARAM_SHAREDBUFFER (pSharedBuff is OMX_ALGOAREASTYPE) */
-
-    OMX_TI_IndexParamSensorDetect,                      /**< 0x7F000083 reference: OMX_TI_PARAM_SENSORDETECT */
-    OMX_TI_IndexParamVideoSvc,                          /**< 0x7F000084 reference: OMX_TI_VIDEO_PARAM_SVCTYPE */
-    OMX_TI_IndexConfigVideoSvcLayerDetails,             /**< 0x7F000085 reference: OMX_TI_VIDEO_CONFIG_SVCLAYERDETAILS */
-    OMX_TI_IndexConfigVideoSvcTargetLayer,              /**< 0x7F000086 reference: OMX_TI_VIDEO_CONFIG_SVCTARGETLAYER */
-    OMX_TI_IndexConfigZslFremeSelectPrio,               /**< 0x7F000087 reference: OMX_TI_CONFIG_ZSLFRAMESELECTPRIOTYPE */
-
-    OMX_TI_IndexUseBufferDescriptor,                    /**< 0x7F000088 reference: OMX_TI_PARAM_USEBUFFERDESCRIPTOR */
-    OMX_TI_IndexParamVtcSlice,                          /**< 0x7F000089 reference: OMX_TI_PARAM_VTCSLICE */
-
-    OMX_TI_IndexConfigAutofocusEnable,                  /**< 0x7F00008A reference: OMX_CONFIG_BOOLEANTYPE */
-    OMX_TI_IndexParamAVCEnableLTRMode,                  /**< 0x7F00008B reference: OMX_TI_VIDEO_PARAM_AVC_LTRP*/
-    OMX_TI_IndexConfigAVCEnableNextLTR,                 /**< 0x7F00008C reference: OMX_TI_VIDEO_CONFIG_AVC_LTRP*/
-    OMX_TI_IndexConfigAVCUpdateLTRInterval,             /**< 0x7F00008D reference: OMX_TI_VIDEO_CONFIG_AVC_LTRP_INTERVAL*/
-    OMX_TI_IndexParamTimeStampInDecodeOrder,            /**< 0x7F00008E reference: OMX_TI_PARAM_TIMESTAMP_IN_DECODE_ORDER */
-    OMX_TI_IndexParamVideoAutoFrameRateUpdate,          /**< 0x7F00008F reference: OMX_TI_VIDEO_PARAM_AUTO_FRAMERATE_UPDATE */
-    OMX_TI_IndexParamBayerCompression,                  /**< 0x7F000090 reference: OMX_TI_PARAM_BAYERCOMPRESSION */
-    OMX_TI_IndexParamSkipGreyOutputFrames,              /**< 0x7F000091 reference: OMX_TI_PARAM_SKIP_GREY_OUTPUT_FRAMES */
-    OMX_TI_IndexConfigMipiCounters,                     /**< 0x7F000092 reference: OMX_CONFIG_MIPICOUNTERS */
-    OMX_TI_IndexConfigCsiTimingRW,                      /**< 0x7F000093 reference: OMX_CONFIG_CSITIMINGRW */
-    OMX_TI_IndexConfigCSIcomplexIO,                     /**< 0x7F000094 reference: OMX_CONFIG_CSICMPXIO */
-    OMX_TI_IndexConfigAFScore,                          /**< 0x7F000095 reference: OMX_CONFIG_AUTOFOCUSSCORE */
-    OMX_TI_IndexConfigColorBars,                        /**< 0x7F000096 reference: OMX_CONFIG_COLORBARS */
-    OMX_TI_IndexConfigOTPEeprom,                        /**< 0x7F000097 reference: OMX_CONFIG_OTPEEPROM */
-    OMX_TI_IndexConfigISPInfo,                          /**< 0x7F000098 reference: OMX_CONFIG_ISPINFO */
-    OMX_TI_IndexConfigPicSizeControlInfo,               /**< 0x7F000099 reference: OMX_TI_VIDEO_CONFIG_PICSIZECONTROLINFO */
-    OMX_TI_IndexConfigPortTapPoint,                     /**< 0x7F00009A reference: OMX_TI_CONFIG_PORTTAPPOINTTYPE */
-    OMX_TI_IndexConfigDisableNSF2,                      /**< 0x7F00009B reference: OMX_CONFIG_BOOLEANTYPE */
-    OMX_TI_IndexConfigDisableSharpening,                /**< 0x7F00009C reference: OMX_CONFIG_BOOLEANTYPE */
-    OMX_TI_IndexConfigExternalGamma,                    /**< 0x7F00009D reference: OMX_CONFIG_BOOLEANTYPE */
-    OMX_TI_IndexConfigDisableThreeLinColorMap,          /**< 0x7F00009E reference: OMX_CONFIG_BOOLEANTYPE */
-    OMX_TI_IndexParamComponentBufferAllocation,         /**< 0x7F00009F reference: OMX_TI_PARAM_COMPONENTBUFALLOCTYPE */
-    OMX_TI_IndexConfigEnqueueShotConfigs,               /**< 0x7F0000A0 reference: OMX_TI_CONFIG_ENQUEUESHOTCONFIGS */
-    OMX_TI_IndexConfigQueryAvailableShots,              /**< 0x7F0000A1 reference: OMX_TI_CONFIG_QUERYAVAILABLESHOTS */
-    OMX_TI_IndexConfigDisableNSF1,                      /**< 0x7F0000A2 reference: OMX_CONFIG_BOOLEANTYPE */
-    OMX_TI_IndexConfigDisableGIC,                       /**< 0x7F0000A3 reference: OMX_CONFIG_BOOLEANTYPE */
-    OMX_TI_IndexConfigVectShotStopMethod,               /**< 0x7F0000A4 reference: OMX_TI_CONFIG_VECTSHOTSTOPMETHODTYPE */
-    OMX_TI_IndexParamComponentExpectedSuspensionState,  /**< 0x7F0000A5 reference: OMX_PARAM_SUSPENSIONTYPE */
-    OMX_TI_IndexComponentHandle,                        /**< 0x7F0000A6 reference: OMX_TI_COMPONENT_HANDLE */
-    OMX_TI_IndexParamVideoEnableMetadata,               /**< 0x7F0000A7 reference: OMX_TI_PARAM_DECMETADATA */
-    OMX_TI_IndexParamVideoDeblockingQP,                 /**< 0x7F0000A8 reference: OMX_TI_VIDEO_PARAM_DEBLOCKINGQP */
-    OMX_TI_IndexParamAVCTemporalScalabilitySetting,     /**< 0x7F0000A9 reference: OMX_TI_VIDEO_PARAM_TEMPORAL_SCALABILITY*/
-    OMX_TI_IndexParamImagePyramid,                      /**< 0x7F0000AA reference: OMX_TI_PARAM_IMAGEPYRAMIDTYPE */
-
-    /*VC1 Encoder specific Indices*/
-    OMX_TI_IndexParamVC1InterlaceSettings,              /**< 0x7F000AB reference:OMX_TI_VIDEO_PARAM_VC1INTERLACECODING*/
-    OMX_IndexConfigVideoVC1IntraPeriod,                 /**< 0x7F000AC reference: OMX_TI_VIDEO_CONFIG_VC1INTRAPERIOD */
-    OMX_TI_IndexParamVC1HRDBufferSizeSetting,           /**< 0x7F000AD reference: OMX_TI_VIDEO_PARAM_VC1HRDBUFFERSETTING */
-    OMX_TI_IndexConfigVC1HRDBufferSizeSetting,          /**< 0x7F000AE reference: OMX_TI_VIDEO_CONFIG_VC1HRDBUFFERSETTING */
-    OMX_TI_IndexParamVideoStdVC1,                       /**< 0x7F000AF reference: OMX_TI_VIDEO_VC1_STD_PARAMS */
-    OMX_TI_IndexParamVideoGetConfigData,                /**< 0x7F000B0 reference: OMX_TI_VIDEO_GETCONFIGPARAMS */
-    OMX_IndexParamVC1BitStreamFormatSupported,          /**< 0x7F000B1 reference: OMX_VC1BITSTREAMFORMATTYPE */
-    OMX_IndexParamVC1BitStreamFormat,                   /**< 0x7F000B2 reference: OMX_VC1BITSTREAMFORMATTYPE */
-    OMX_IndexParamVC1BitStreamFormatSelect,             /**< 0x7F000B3 reference: OMX_VC1BITSTREAMFORMATTYPE */
-
-    /*H264 Encoder specific Indices*/
-    OMX_TI_IndexConfigVideoIntraRefresh,                /**< 0x7F0000B4 reference: OMX_TI_VIDEO_PARAM_INTRAREFRESHTYPE */
-
-    OMX_TI_IndexConfigGammaTable,                       /**< 0x7F0000B5 reference: OMX_TI_CONFIG_SHAREDBUFFER */
-    OMX_TI_IndexConfigDynamicCameraDescriptor,          /**< 0x7F0000B6 reference: OMX_TI_CONFIG_SHAREDBUFFER */
-
-    OMX_TI_IndexConfigStreamInterlaceFormats = ((OMX_INDEXTYPE)OMX_IndexVendorStartUnused + 0x100), /**< 0x7F000100 reference: OMX_STREAMINTERLACEFORMATTYPE */
-
+    OMX_TI_IndexParamUseEnhancedPortReconfig,     /**< reference: OMX_TI_IndexParamUseEnhancedPortReconfig */
+    OMX_TI_IndexEncoderStoreMetadatInBuffers,
+    OMX_TI_IndexParamZslHistoryLen,                     /**< reference: OMX_TI_PARAM_ZSLHISTORYLENTYPE */
+    OMX_TI_IndexConfigZslDelay,                          /**< reference: OMX_TI_CONFIG_ZSLDELAYTYPE */
+    OMX_TI_IndexParamMetaDataBufferInfo,                  /***< reference: OMX_TI_PARAM_METADATABUFFERINFO */
+    OMX_TI_IndexConfigZslFrameSelectMethod,              /**< reference: OMX_TI_CONFIG_ZSLFRAMESELECTMETHODTYPE */
+    OMX_TI_IndexAndroidNativeBufferUsage,          /**< reference: OMX_TI_IndexAndroidNativeBufferUsage */
+    OMX_TI_IndexConfigAlgoAreas,                         /**< reference: OMX_PARAM_SHAREDBUFFER (pSharedBuff is OMX_ALGOAREASTYPE) */
+    OMX_TI_IndexConfigAutofocusEnable,             /**< reference: OMX_CONFIG_BOOLEANTYPE */
+    OMX_TI_IndexComponentHandle                        /**< 0x7F0000** reference: OMX_TI_COMPONENT_HANDLE */
 #ifdef BOARD_USE_MOTOROLA_DOMX_ENHANCEMENTS
     // Note! This section must be placed at the bottom of this enum.
 #if 0

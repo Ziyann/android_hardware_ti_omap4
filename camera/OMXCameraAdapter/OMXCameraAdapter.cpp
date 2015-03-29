@@ -131,7 +131,9 @@ status_t OMXCameraAdapter::initialize(CameraProperties::Properties* caps)
     mComponentState = OMX_StateLoaded;
 
     CAMHAL_LOGVB("OMX_GetHandle -0x%x sensor_index = %lu", eError, mSensorIndex);
+#ifndef CAMERAHAL_TUNA
     initDccFileDataSave(&mCameraAdapterParameters.mHandleComp, mCameraAdapterParameters.mPrevPortIndex);
+#endif
 
     eError = OMX_SendCommand(mCameraAdapterParameters.mHandleComp,
                                   OMX_CommandPortDisable,
@@ -1017,6 +1019,7 @@ status_t OMXCameraAdapter::setupTunnel(uint32_t SliceHeight, uint32_t EncoderHan
     }
 
 #ifndef MOTOROLA_CAMERA
+#ifndef CAMERAHAL_TUNA
     //Slice  Configuration
     OMX_TI_PARAM_VTCSLICE VTCSlice;
     OMX_INIT_STRUCT_PTR(&VTCSlice, OMX_TI_PARAM_VTCSLICE);
@@ -1031,6 +1034,7 @@ status_t OMXCameraAdapter::setupTunnel(uint32_t SliceHeight, uint32_t EncoderHan
         CAMHAL_LOGEB("OMX_SetParameter on OMX_TI_IndexParamVtcSlice returned error: 0x%x", eError);
         return BAD_VALUE;
     }
+#endif
 
     eError = OMX_SetupTunnel(mCameraAdapterParameters.mHandleComp,
             mCameraAdapterParameters.mVideoPortIndex, encoderHandle, 0);
@@ -2653,6 +2657,7 @@ status_t OMXCameraAdapter::printComponentVersion(OMX_HANDLETYPE handle)
 
 status_t OMXCameraAdapter::setS3DFrameLayout(OMX_U32 port) const
 {
+#ifndef CAMERAHAL_TUNA
     OMX_ERRORTYPE eError = OMX_ErrorNone;
     OMX_TI_FRAMELAYOUTTYPE frameLayout;
     const OMXCameraPortParameters *cap =
@@ -2702,6 +2707,7 @@ status_t OMXCameraAdapter::setS3DFrameLayout(OMX_U32 port) const
         }
 
     LOG_FUNCTION_NAME_EXIT;
+#endif
 
     return NO_ERROR;
 }
@@ -3581,7 +3587,9 @@ OMX_ERRORTYPE OMXCameraAdapter::OMXCameraAdapterFillBufferDone(OMX_IN OMX_HANDLE
             }
         }
 
+#ifndef CAMERAHAL_TUNA
         sniffDccFileDataSave(pBuffHeader);
+#endif
 
         stat |= advanceZoom();
 
@@ -4045,7 +4053,7 @@ status_t OMXCameraAdapter::setExtraData(bool enable, OMX_U32 nPortIndex, OMX_EXT
     extraDataControl.nPortIndex = nPortIndex;
     extraDataControl.eExtraDataType = eType;
 #ifdef CAMERAHAL_TUNA
-    extraDataControl.eCameraView = OMX_2D;
+    extraDataControl.eCameraView = OMX_2D_Prv;
 #endif
 
     if (enable) {
@@ -4141,7 +4149,9 @@ OMXCameraAdapter::OMXCameraAdapter(size_t sensor_index)
     // Initial values
     mTimeSourceDelta = 0;
     onlyOnce = true;
+#ifndef CAMERAHAL_TUNA
     mDccData.pData = NULL;
+#endif
 
     mInitSem.Create(0);
     mFlushSem.Create(0);
@@ -4189,9 +4199,11 @@ OMXCameraAdapter::~OMXCameraAdapter()
     switchToLoaded();
 
     if ( mOmxInitialized ) {
+#ifndef CAMERAHAL_TUNA
         saveDccFileDataSave();
 
         closeDccFileDataSave();
+#endif
         // deinit the OMX
         if ( mComponentState == OMX_StateLoaded || mComponentState == OMX_StateInvalid ) {
             // free the handle for the Camera component
